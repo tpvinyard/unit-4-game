@@ -2,6 +2,7 @@ $(document).ready(function() {
     let attackPower = "";
     let healthPoints = "";
     let counterAttackPower = "";
+    let counterHealthPoints = "";
     let isCharacterChosen = false;
     let isEnemyChosen = false;
     let isGameOver = false;
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
     };
 
-    $(".card").on("click", function () {
+    $(".main").on("click", function () {
 
         if (!isCharacterChosen) {
 
@@ -23,30 +24,41 @@ $(document).ready(function() {
             $("#character-3").hide();
             $("#character-4").hide();
 
-            let mainCharacter = $("<div>");
-            mainCharacter.addClass("card");
-            mainCharacter.attr("data-hp", $(this).attr("data-hp"));
-            mainCharacter.attr("data-ap", $(this).attr("data-ap"));
-            mainCharacter.text($(this).attr("data-hp"));
-            $("#your-character").append(mainCharacter);
+            healthPoints = ($(this).attr("data-hp"));
 
-            $(".card").each(function() {
-                if (mainCharacter.text() !== $(this).attr("data-hp")) {
-                    let otherCharacter = $("<div>");
-                    otherCharacter.addClass("card");
-                    otherCharacter.attr("data-hp", $(this).attr("data-hp"));
-                    otherCharacter.attr("data-ap", $(this).attr("data-ap"));
-                    otherCharacter.text($(this).attr("data-hp"));
-                    $("#available-attackers").append(otherCharacter);
+            $(".your").each(function() {
+                if (healthPoints === $(this).attr("data-hp")) {
+                    $(this).show();
                 }
-            });
+            })
+
+            $(".available").each(function() {
+                if (healthPoints !== $(this).attr("data-hp")) {
+                    $(this).show();
+                }
+            })
             
             isCharacterChosen = true;
 
-        } else if (!isEnemyChosen) {
+        }
+    
+    });
+
+    $(".available").on("click", function() {
+        
+        if (!isEnemyChosen) {
+
+            counterHealthPoints = ($(this).attr("data-hp"));
+
+            $(".defender").each(function() {
+                if (counterHealthPoints === $(this).attr("data-hp")) {
+                    $(this).show();
+                }
+            })
+
             isEnemyChosen = true;
         }
 
-
     })
+
 });

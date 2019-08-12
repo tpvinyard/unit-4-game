@@ -9,15 +9,23 @@ $(document).ready(function() {
     let isGameOver = false;
 
     function resetGame () {
+        $("#character-1, #character-2, #character-3, #character-4").show();
+        $("#character-1-your, #character-2-your, #character-3-your, #character-4-your").hide();
+        $("#character-1-available, #character-2-available, #character-3-available, #character-4-available").hide();
+        $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
+        $("#my-health, #opponent-health").empty();
+        $("#reset-button").hide();
 
-    };
+        attackPower = 0;
+        originalAttackPower = 0;
+        healthPoints = 0;
+        counterAttackPower = 0;
+        counterHealthPoints = 0;
+        isCharacterChosen = false;
+        isEnemyChosen = false;
+        isGameOver = false;
 
-    function resetDefender () {
-        $(".defender").each(function() {
-            if (counterHealthPoints === $(this).attr("data-health")) {
-                $(this).hide();
-            }
-        })
+    
     };
 
     $(".main").on("click", function () {
@@ -78,7 +86,7 @@ $(document).ready(function() {
 
     $("#attack-button").on("click", function() {
 
-        if (isEnemyChosen && isCharacterChosen) {
+        if (isEnemyChosen && isCharacterChosen && !isGameOver) {
             healthPoints = healthPoints - counterAttackPower;
             counterHealthPoints = counterHealthPoints - attackPower;
             attackPower = parseInt(attackPower) + parseInt(originalAttackPower);
@@ -89,6 +97,7 @@ $(document).ready(function() {
             if (healthPoints <= 0) {
                 $("#opponent-health").append("<div>Game Over</div>");
                 $("#reset-button").show();
+                isGameOver = true;
             }
 
             if (counterHealthPoints <= 0) {
@@ -99,7 +108,9 @@ $(document).ready(function() {
         }
     })
 
-    
+    $("#reset-button").on("click", function () {
+        resetGame();
+    })
 
 
 

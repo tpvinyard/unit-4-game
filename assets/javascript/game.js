@@ -7,6 +7,7 @@ $(document).ready(function() {
     let isCharacterChosen = false;
     let isEnemyChosen = false;
     let isGameOver = false;
+    let counterFoes = 0;
 
     function resetGame () {
         $("#initializeGameText, #character-1, #character-2, #character-3, #character-4").show();
@@ -24,6 +25,7 @@ $(document).ready(function() {
         isCharacterChosen = false;
         isEnemyChosen = false;
         isGameOver = false;
+        counterFoes = 0;
 
     
     };
@@ -65,7 +67,7 @@ $(document).ready(function() {
         if (!isEnemyChosen) {
 
             counterHealthPoints = ($(this).attr("data-health"));
-            counterAttackPower = ($(this).attr("data-attack"));
+            counterAttackPower = ($(this).attr("data-counter-attack"));
 
             $(".available").each(function() {
                 if (counterHealthPoints === $(this).attr("data-health")){
@@ -92,20 +94,39 @@ $(document).ready(function() {
             counterHealthPoints = counterHealthPoints - attackPower;
             attackPower = parseInt(attackPower) + parseInt(originalAttackPower);
 
+
             $("#my-health").text("Your hero's health is " + healthPoints);
             $("#opponent-health").text("Your opponent's health is " + counterHealthPoints);
 
-            if (healthPoints <= 0) {
+            if (counterHealthPoints <= 0) {
+                counterFoes++;
+                console.log(counterFoes);
+                if (counterFoes >= 3) {
+                    console.log("made it!")
+                    $("#opponent-health").append("<div>You win!</div>");
+                    $("#reset-button").show();
+                    isGameOver = true;
+                }
+                $("#opponent-health").append("<div>Your opponent has died. Choose another foe.</div>");
+                $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
+                isEnemyChosen = false;
+            }
+
+            if (healthPoints <= 0 && !isGameOver) {
                 $("#opponent-health").append("<div>Game Over</div>");
                 $("#reset-button").show();
                 isGameOver = true;
             }
 
-            if (counterHealthPoints <= 0) {
-                $("#opponent-health").append("<div>Your opponent has died. Choose another foe.</div>");
-                $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
-                isEnemyChosen = false;
-            }
+            // if (counterHealthPoints <= 0) {
+            //     counterFoes++;
+            //     if (counterFoes = 3) {
+
+            //     }
+            //     $("#opponent-health").append("<div>Your opponent has died. Choose another foe.</div>");
+            //     $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
+            //     isEnemyChosen = false;
+            // }
         }
     })
 

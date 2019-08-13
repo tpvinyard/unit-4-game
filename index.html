@@ -27,22 +27,22 @@
         <div class="row justify-content-center" id="initial-characters">
             <div class="col-md-8 text-center">
                 <h2 id="initializeGameText">Choose any character to begin!</h2>
-                <div class="card main" id="character-1" data-health="120" data-attack="8">
+                <div class="card main" id="character-1" data-health="120" data-attack="25" data-counter-attack="25">
                     <h6>Nazgul</h6>
                     <img class="img-fluid" src="assets/images/nazgul.jpeg">
                     <h6 class="number">120</h6>
                 </div>
-                <div class="card main" id="character-2" data-health="100" data-attack="10">
+                <div class="card main" id="character-2" data-health="100" data-attack="27" data-counter-attack="30">
                     <h6>Frodo</h6>
                     <img class="img-fluid" src="assets/images/frodo.jpg">
                     <h6 class="number">100</h6>
                 </div>
-                <div class="card main" id="character-3" data-health="150" data-attack="15">
+                <div class="card main" id="character-3" data-health="150" data-attack="20" data-counter-attack="21">
                     <h6>Gandalf</h6>
                     <img class="img-fluid" src="assets/images/gandalf.jpg">
                     <h6 class="number">150</h6>
                 </div>
-                <div class="card main" id="character-4" data-health="180" data-attack="25">
+                <div class="card main" id="character-4" data-health="180" data-attack="16" data-counter-attack="20">
                     <h6>Sauron</h6>
                     <img class="img-fluid" src="assets/images/sauron.png">
                     <h6 class="number">180</h6>
@@ -54,22 +54,22 @@
         <div class="row">
             <div class="col-md-4 yourColumn">
                 <h3 id="your-character">Your Character</h3>
-                <div class="card your" id="character-1-your" data-health="120" data-attack="8" style="display: none;">
+                <div class="card your" id="character-1-your" data-health="120" data-attack="25" data-counter-attack="25" style="display: none;">
                     <h6>Nazgul</h6>
                     <img class="img-fluid" src="assets/images/nazgul.jpeg">
-                    <h6 class="number">120</h6>
+                    <h6 class="number">15</h6>
                 </div>
-                <div class="card your" id="character-2-your" data-health="100" data-attack="10" style="display: none;">
+                <div class="card your" id="character-2-your" data-health="100" data-attack="27" data-counter-attack="30" style="display: none;">
                     <h6>Frodo</h6>
                     <img class="img-fluid" src="assets/images/frodo.jpg">
                     <h6 class="number">100</h6>
                 </div>
-                <div class="card your" id="character-3-your" data-health="150" data-attack="15" style="display: none;">
+                <div class="card your" id="character-3-your" data-health="150" data-attack="20" data-counter-attack="21" style="display: none;">
                     <h6>Gandalf</h6>
                     <img class="img-fluid" src="assets/images/gandalf.jpg">
                     <h6 class="number">150</h6>
                 </div>
-                <div class="card your" id="character-4-your" data-health="180" data-attack="25" style="display: none;">
+                <div class="card your" id="character-4-your" data-health="180" data-attack="16" data-counter-attack="20" style="display: none;">
                     <h6>Sauron</h6>
                     <img class="img-fluid" src="assets/images/sauron.png">
                     <h6 class="number">180</h6>
@@ -80,22 +80,22 @@
                 <h3>Fight Section</h3>
                 <button id="attack-button">Attack</button>
                 <h3 id="defender">Defender</h3>
-                <div class="card defender" id="character-1-defender" data-health="120" data-attack="8" style="display: none;">
+                <div class="card defender" id="character-1-defender" data-health="120" data-attack="25" data-counter-attack="25" style="display: none;">
                     <h6>Nazgul</h6>
                     <img class="img-fluid" src="assets/images/nazgul.jpeg">
                     <h6 class="number">120</h6>
                 </div>
-                <div class="card defender" id="character-2-defender" data-health="100" data-attack="10" style="display: none;">
+                <div class="card defender" id="character-2-defender" data-health="100" data-attack="27" data-counter-attack="30" style="display: none;">
                     <h6>Frodo</h6>
                     <img class="img-fluid" src="assets/images/frodo.jpg">
                     <h6 class="number">100</h6>
                 </div>
-                <div class="card defender" id="character-3-defender" data-health="150" data-attack="15" style="display: none;">
+                <div class="card defender" id="character-3-defender" data-health="150" data-attack="20" data-counter-attack="21" style="display: none;">
                     <h6>Gandalf</h6>
                     <img class="img-fluid" src="assets/images/gandalf.jpg">
                     <h6 class="number">150</h6>
                 </div>
-                <div class="card defender" id="character-4-defender" data-health="180" data-attack="25" style="display: none;">
+                <div class="card defender" id="character-4-defender" data-health="180" data-attack="16" data-counter-attack="20" style="display: none;">
                     <h6>Sauron</h6>
                     <img class="img-fluid" src="assets/images/sauron.png">
                     <h6 class="number">180</h6>
@@ -107,22 +107,22 @@
 
             <div class="col-md-4 availableColumn">
                 <h3 id="available-attackers">Enemies Available To Attack</h3>
-                <div class="card available" id="character-1-available" data-health="120" data-attack="8" style="display: none;">
+                <div class="card available" id="character-1-available" data-health="120" data-attack="25" data-counter-attack="25" style="display: none;">
                     <h6>Nazgul</h6>
                     <img class="img-fluid" src="assets/images/nazgul.jpeg">
                     <h6 class="number">120</h6>
                 </div>
-                <div class="card available" id="character-2-available" data-health="100" data-attack="10" style="display: none;">
+                <div class="card available" id="character-2-available" data-health="100" data-attack="27" data-counter-attack="30" style="display: none;">
                     <h6>Frodo</h6>
                     <img class="img-fluid" src="assets/images/frodo.jpg">
                     <h6 class="number">100</h6>
                 </div>
-                <div class="card available" id="character-3-available" data-health="150" data-attack="15" style="display: none;">
+                <div class="card available" id="character-3-available" data-health="150" data-attack="20" data-counter-attack="21" style="display: none;">
                     <h6>Gandalf</h6>
                     <img class="img-fluid" src="assets/images/gandalf.jpg">
                     <h6 class="number">150</h6>
                 </div>
-                <div class="card available" id="character-4-available" data-health="180" data-attack="25" style="display: none;">
+                <div class="card available" id="character-4-available" data-health="180" data-attack="16" data-counter-attack="16" style="display: none;">
                     <h6>Sauron</h6>
                     <img class="img-fluid" src="assets/images/sauron.png">
                     <h6 class="number">180</h6>

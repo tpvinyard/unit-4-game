@@ -14,6 +14,7 @@ $(document).ready(function() {
         $("#character-1-your, #character-2-your, #character-3-your, #character-4-your").hide();
         $("#character-1-available, #character-2-available, #character-3-available, #character-4-available").hide();
         $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
+        $("#your-character, #fight-section, #attack-button, #defender, #available-attackers").hide();
         $("#my-health, #opponent-health").empty();
         $("#reset-button").hide();
 
@@ -35,10 +36,8 @@ $(document).ready(function() {
         if (!isCharacterChosen) {
 
             $("#initializeGameText").hide();
-            $("#character-1").hide();
-            $("#character-2").hide();
-            $("#character-3").hide();
-            $("#character-4").hide();
+            $("#character-1, #character-2, #character-3, #character-4").hide();
+            $("#your-character, #fight-section, #attack-button, #defender, #available-attackers").show();
 
             healthPoints = ($(this).attr("data-health"));
             attackPower = ($(this).attr("data-attack"));
@@ -100,9 +99,7 @@ $(document).ready(function() {
 
             if (counterHealthPoints <= 0) {
                 counterFoes++;
-                console.log(counterFoes);
                 if (counterFoes >= 3) {
-                    console.log("made it!")
                     $("#opponent-health").append("<div>You win!</div>");
                     $("#reset-button").show();
                     isGameOver = true;
@@ -117,16 +114,6 @@ $(document).ready(function() {
                 $("#reset-button").show();
                 isGameOver = true;
             }
-
-            // if (counterHealthPoints <= 0) {
-            //     counterFoes++;
-            //     if (counterFoes = 3) {
-
-            //     }
-            //     $("#opponent-health").append("<div>Your opponent has died. Choose another foe.</div>");
-            //     $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
-            //     isEnemyChosen = false;
-            // }
         }
     })
 

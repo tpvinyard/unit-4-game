@@ -9,7 +9,7 @@ $(document).ready(function() {
     let isGameOver = false;
 
     function resetGame () {
-        $("#character-1, #character-2, #character-3, #character-4").show();
+        $("#initializeGameText, #character-1, #character-2, #character-3, #character-4").show();
         $("#character-1-your, #character-2-your, #character-3-your, #character-4-your").hide();
         $("#character-1-available, #character-2-available, #character-3-available, #character-4-available").hide();
         $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
@@ -32,6 +32,7 @@ $(document).ready(function() {
 
         if (!isCharacterChosen) {
 
+            $("#initializeGameText").hide();
             $("#character-1").hide();
             $("#character-2").hide();
             $("#character-3").hide();

@@ -1,6 +1,8 @@
 body {
     background-image: url("./../images/backgroundLOTR.jpg");
+    background-size: cover;
     font-family: 'PT Serif', serif;
+    font: bold;
 }
 
 .main {
@@ -23,11 +25,16 @@ body {
 
 
 .yourColumn, .defenderColumn, .availableColumn {
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 #your-character {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+#fight-section {
+    margin-top: 120px;
 }
 
 img {

@@ -8,7 +8,7 @@ Play here: https://tpvinyard.github.io/unit-4-game
 * Click on a character to begin. This character will be your character.
 * Click on a character on the right to choose an opponent.
 * Click the attack button to attack the opponent. Keep attacking!
-* Choosing opponents and good luck!
+* Keep choosing opponents and good luck!
 * After you have won :smiley: or lost :grimacing:, simply click reset and choose your character again!
 
 

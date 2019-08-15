@@ -6,10 +6,28 @@ body {
 .main {
     float: left;
     margin: 20px 10px;
+    border: 2px solid green;
 }
+
+.your {
+    border: 2px solid green;
+}
+
+.available {
+    border: 2px solid black;
+}
+
+.defender {
+    border: 2px solid red;
+}
+
 
 .yourColumn, .defenderColumn, .availableColumn {
     margin-top: 5%;
+}
+
+#your-character {
+    margin-bottom: 100px;
 }
 
 img {

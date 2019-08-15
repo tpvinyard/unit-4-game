@@ -48,8 +48,11 @@ $(document).ready(function() {
             originalAttackPower = ($(this).attr("data-attack"));
             characterName = ($(this).attr("name"));
 
+            
+
             $(".your").each(function() {
                 if (healthPoints === $(this).attr("data-health")) {
+                    $(this).find('.number').text(healthPoints);
                     $(this).show();
                 }
             })
@@ -84,6 +87,7 @@ $(document).ready(function() {
 
             $(".defender").each(function() {
                 if (counterHealthPoints === $(this).attr("data-health")) {
+                    $(this).find('.number').text(counterHealthPoints);
                     $(this).show();
                     // $("#opponent-health").text("Your opponent's health is " + counterHealthPoints);
                 }

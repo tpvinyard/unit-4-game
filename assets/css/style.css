@@ -15,10 +15,6 @@ body {
     border: 2px solid green;
 }
 
-.btn {
-    margin-left: 10px;
-}
-
 .available {
     border: 2px solid black;
 }
@@ -38,11 +34,11 @@ body {
 }
 
 .appendedText {
-    font-size: 150%;
-    font: bold;
+    font-size: 130%;
+    margin-bottom: 10px;
 }
 
-#fight-section {
+#fight-section, #available-attackers {
     margin-top: 50px;
 }
 

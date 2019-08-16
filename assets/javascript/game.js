@@ -16,7 +16,7 @@ $(document).ready(function() {
         $("#character-1-your, #character-2-your, #character-3-your, #character-4-your").hide();
         $("#character-1-available, #character-2-available, #character-3-available, #character-4-available").hide();
         $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
-        $("#your-character, #fight-section, #attack-button, #defender, #available-attackers").hide();
+        $("#your-character, #fight-section, #attack-button, #defender, #available-attackers, #instructions").hide();
         $("#my-attack, #opponent-attack").empty();
         $("#reset-button").hide();
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
             $("#initializeGameText").hide();
             $("#character-1, #character-2, #character-3, #character-4").hide();
-            $("#your-character, #fight-section, #attack-button, #defender, #available-attackers").show();
+            $("#your-character, #fight-section, #attack-button, #defender, #available-attackers ,#instructions").show();
 
             healthPoints = ($(this).attr("data-health"));
             attackPower = ($(this).attr("data-attack"));
@@ -74,6 +74,7 @@ $(document).ready(function() {
         if (!isEnemyChosen) {
 
             $("#my-attack, #opponent-attack").empty();
+            $("#instructions").hide();
 
             counterHealthPoints = ($(this).attr("data-health"));
             counterAttackPower = ($(this).attr("data-counter-attack"));
@@ -124,11 +125,11 @@ $(document).ready(function() {
             if (counterHealthPoints <= 0) {
                 counterFoes++;
                 if (counterFoes >= 3) {
-                    $("#opponent-attack").append("<div>You win!</div>");
+                    $("#opponent-attack").append("<div class='appendedText'>You win!</div>");
                     $("#reset-button").show();
                     isGameOver = true;
                 } else if (healthPoints > 0) {
-                $("#opponent-attack").append("<div class='appendedText'>Your opponent has died.</div> <div class='appendedText'>Choose (click) another foe.</div>");
+                $("#my-attack").prepend("<div class='appendedText'>Your opponent has died.</div> <div class='appendedText'>Choose (click) another foe.</div>");
                 $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
                 isEnemyChosen = false;
                 }

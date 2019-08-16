@@ -128,14 +128,14 @@ $(document).ready(function() {
                     $("#reset-button").show();
                     isGameOver = true;
                 } else if (healthPoints > 0) {
-                $("#opponent-attack").append("<div>Your opponent has died. Choose another foe.</div>");
+                $("#opponent-attack").append("<div class='appendedText'>Your opponent has died.</div> <div class='appendedText'>Choose (click) another foe.</div>");
                 $("#character-1-defender, #character-2-defender, #character-3-defender, #character-4-defender").hide();
                 isEnemyChosen = false;
                 }
             }
 
             if (healthPoints <= 0 && !isGameOver) {
-                $("#opponent-attack").append("<div>You have died! Game Over</div>");
+                $("#opponent-attack").append("<div class='appendedText'>You have died!</div><div class='appendedText'>Game Over</div>");
                 $("#reset-button").show();
                 isGameOver = true;
             }
